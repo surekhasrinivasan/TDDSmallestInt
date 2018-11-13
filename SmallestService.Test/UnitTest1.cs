@@ -13,7 +13,7 @@ namespace Tests
         public void SetUpFinderTests()
         {
             finder = new Finder();
-        } 
+        }
 
         [Test]
         public void ThrowsExceptionIfArrayInputIsEmpty()
@@ -29,18 +29,18 @@ namespace Tests
             //var finder = new Finder();
             var input = new int[1] { 1 };
             var output = finder.FindSmallestInt(input);
-            bool returnInt = (output.GetType() == typeof(int));
+            var expected = 1;
 
-            Assert.IsTrue(returnInt);
+            Assert.AreEqual(expected, output);
         }
 
         [Test]
         public void IfArrayLengthIsTwoReturnLowestInt()
         {
             //var finder = new Finder();
-            var input = new int[2] { 3, 1 };
+            var input = new int[2] { 3, 2 };
             var output = finder.FindSmallestInt(input);
-            var expected = 1;
+            var expected = 2;
 
             Assert.AreEqual(expected, output);
         }
